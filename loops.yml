@@ -1,0 +1,15 @@
+---
+- hosts: webservers
+  become: yes
+  tasks:
+  - name: Install Multiple TASKS
+    apt:
+      name: "{{ item }}"
+      state: present
+    loop:
+    - wget
+    - foo-tool
+    - tree
+    - default-jre
+
+    

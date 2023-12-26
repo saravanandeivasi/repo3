@@ -13,3 +13,8 @@
       name: "{{installwebserver}}"
       state: started
      when: ansible_os_family =="Debian"
+
+   - name: Install JAVA
+     apt:
+      name: "{{installjava}}"  
+      state: present

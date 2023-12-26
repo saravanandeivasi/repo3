@@ -1,2 +1,3 @@
 ---
 installwebserver: apache2
+installjava: default-jre

@@ -6,7 +6,7 @@
      apt:
       name: "{{installwebserver}}"
       state: present
-      tags: apache2
+     tags: apache2
      when: ansible_os_family =="Debian"
 
    - name: start the webserver on Ubuntu
@@ -19,10 +19,10 @@
      apt:
       name: "{{installjava}}"  
       state: present
-      tags: java
+     tags: java
 
    - name: install wget
      apt:
       name: wget
       state: present
-      tags: weget   
+     tags: weget   

@@ -1,0 +1,28 @@
+---
+- hosts: webservers
+  become: yes
+  tasks:
+   - name: install the webserver on Ubuntu
+     apt:
+      name: "{{installwebserver}}"
+      state: present
+      tags: apache2
+     when: ansible_os_family =="Debian"
+
+   - name: start the webserver on Ubuntu
+     service:
+      name: "{{installwebserver}}"
+      state: started
+     when: ansible_os_family =="Debian"
+
+   - name: Install JAVA
+     apt:
+      name: "{{installjava}}"  
+      state: present
+      tags: java
+
+   - name: install wget
+     apt:
+      name: wget
+      state: present
+      tags: weget   

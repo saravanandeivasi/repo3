@@ -9,4 +9,16 @@
   - name: display the result
     debug:
      msg: "{{resultfor1stresult}}"  
+
+  - name: Install foo
+    apt:
+     name: foo
+     state: present
+    when: resultfor1stresult.stderr ==""
+
+  - name: Install tree
+    apt: 
+     name: tree
+     state: present  
+     when: resultfor1stresult.stderr !=""
     

@@ -10,9 +10,9 @@
     debug:
      msg: "{{resultfor1stresult}}"  
 
-  - name: Install foo
+  - name: Install git
     apt:
-     name: foo
+     name: git
      state: present
     when: resultfor1stresult.stderr ==""
 

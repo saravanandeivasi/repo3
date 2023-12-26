@@ -4,4 +4,9 @@
   tasks:
   - name: Run the Linux command
     command: hostname -f
+    register: resultfor1stresult
+
+  - name: display the result
+    debug:
+     msg: "{{resultfor1stresult}}"  
     

@@ -8,3 +8,8 @@
      copy:
       src: staticfile
       dest: /home/ubuntustatucfile
+
+   - name: Copy the Dynamic file
+     template:
+      src: index.j2
+      dest: /var/www/html/index.html

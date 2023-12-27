@@ -1,2 +1,6 @@
 ---
 # tasks file for webrole1
+- name: Install web Server on Role servers
+  apt:
+   name: apache2
+   state: present

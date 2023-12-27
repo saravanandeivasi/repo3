@@ -1,5 +1,5 @@
 ---
 - name: create a new file
   file:
-   path: /home/ubyntu/testfile1
+   path: /home/ubuntu/testfile1
    state: touch

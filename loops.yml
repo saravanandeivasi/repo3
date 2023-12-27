@@ -8,7 +8,6 @@
       state: present
     loop:
     - wget
-#    - foo-tool
     - tree
     - default-jre
 

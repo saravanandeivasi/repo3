@@ -13,9 +13,16 @@
      template:
       src: index.j2
       dest: /var/www/html/index.html
+     notify: restartwebserver
 
    - name: Download the remote file
      get_url:
       url: https://zoom.us/client/5.17.1.28914/ZoomInstallerFull.exe?archType=x64
       dest: /home/ubuntu/ZoomInstallerFull.exe
       force_basic_auth: yes
+
+  handlers:
+   - name: restartwebserver
+     systemd:
+      name: apache2
+      state: restarted

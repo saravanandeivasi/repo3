@@ -1,0 +1,8 @@
+---
+- hosts: webservers
+  become: yes
+  tasks:
+  - name: Create a File
+    file:
+     path: /home/ubuntu/testfile
+     state: touch

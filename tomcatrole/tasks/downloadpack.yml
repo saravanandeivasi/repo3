@@ -1,0 +1,23 @@
+---
+# Download the TAR file
+
+- name: Download the TOMCAT TAR file
+  get_url:
+   url: https://adp-mirror-vm1-he-fi.apache.org/tomcat/tomcat-10/v10.0.20/bin/apache-tomcat-10.0.20.tar.gz
+   dest: /home/ubuntu/apache-tomcat-10.0.20.tar.gz
+   force_basic_auth: yes
+
+# Crerate Directory
+
+- name: Create a Directory
+  file:
+   Path: /opt/tomcat
+   state: directory
+   
+# Extact the downloaded TAR file
+
+- name: Extrach the TAR file
+  command: 
+   cmd: sudo tar xzvf /home/ubuntu/apache-tomcat-10.0.20.tar.gz -C /opt/tomcat --strip-components=1 
+   creates: NOTICE  
+

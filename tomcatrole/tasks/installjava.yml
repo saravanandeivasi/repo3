@@ -1,0 +1,9 @@
+---
+- name: Update the Sudo
+  apt:
+   update_cache: yes
+
+- name: Install the JAVA file
+  apt:
+   name: default-jre
+   state: present  

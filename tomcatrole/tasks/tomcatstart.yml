@@ -1,0 +1,7 @@
+---
+- name: Relaod the DAEMON
+  systemd:
+   state: started
+   daemon_reload: true
+   name: tomcat
+   enabled: yes

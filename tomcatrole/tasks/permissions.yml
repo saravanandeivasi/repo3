@@ -1,0 +1,6 @@
+---
+- name: Provide the permission for Ownership
+  command: sudo chown -R tomcat:tomcat /opt/tomcat/
+
+- name: Provide execute permission to run the file   
+  command: sudo chmod -R u+x /opt/tomcat/bin
